@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var app = module.exports = express();
 var http = require('http');
 var path = require('path');
+var db = require('./db/config.js');
 
 app.set('port', process.env.PORT || 8080);
 app.use(bodyParser.urlencoded({extended: true}));
@@ -19,3 +20,4 @@ http.createServer(app).listen(app.get('port'), function (req, res) {
   console.log('Express server listening on port ' + app.get('port'));
 //to do - error handling
 });
+
